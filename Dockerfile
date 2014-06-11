@@ -8,13 +8,12 @@ MAINTAINER Giacomo Sanchietti, giacomo@nethesis.it
 
 EXPOSE 980
 
-#RUN rm -f /etc/passwd /etc/group
-#ADD scripts/passwd /etc/passwd
-#ADD scripts/group /etc/group
-
 RUN yum --disablerepo=* localinstall -y http://pulp.nethserver.org/nethserver/nethserver-release.rpm
 RUN rpm --import /etc/pki/rpm-gpg/*
-RUN sed -i 's/pulp.nethserver.org/birro.nethesis.it:8083/' /etc/yum.repos.d/NethServer.repo
+
+# Uncomment for local builds
+#RUN sed -i 's/pulp.nethserver.org/birro.nethesis.it:8083/' /etc/yum.repos.d/NethServer.repo
+
 RUN yum --disablerepo=* --enablerepo=nethserver-base,nethserver-updates,centos-base,centos-updates --exclude=kernel* --releasever=6.5 install rsyslog @nethserver-iso -y
 
 #RUN service rsyslog start
