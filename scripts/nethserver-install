@@ -1,0 +1,65 @@
+#!/bin/bash
+# Install NethServer 
+
+ENABLE_TESTING=0
+ENABLE_DEV=0
+YUM_ARGS=""
+
+while getopts ":td" opt; do
+  case $opt in
+    t)
+      ENABLE_TESTING=1
+      ;;
+    d)
+      echo "-d was triggered!" >&2
+      ENABLE_DEV=1
+      ;;
+    \?)
+      echo "Invalid option: -$OPTARG" >&2
+      echo "Valid options: "
+      echo "  -t : enable testing repository"
+      echo "  -d : enable dev repository"
+      ;;
+  esac
+done
+
+echo "Install base system"
+
+yum --disablerepo=* localinstall -y http://pulp.nethserver.org/nethserver/nethserver-release.rpm
+rpm --import /etc/pki/rpm-gpg/*
+sed -i 's/pulp.nethserver.org/birro.nethesis.it:8083/' /etc/yum.repos.d/NethServer.repo
+yum --disablerepo=* --enablerepo=nethserver-base,nethserver-updates,centos-base,centos-updates --releasever=6.5 install rsyslog inethserver-iso  -y
+
+if [ $ENABLE_DEV -eq 1 ]; then
+    echo "Enable dev repository"
+    YUM_ARGS=$YUM_ARGS" --enablerepo=nethserver-dev "
+
+cat << EOF > /etc/yum.repos.d/nethserver-dev.repo
+[nethserver-dev]
+name=NethServer dev
+baseurl=http://birro.nethesis.it/install/nethserver/\$releasever/dev/\$basearch/
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-NethServer-6
+enabled=0
+enablegroups=0
+EOF
+
+fi
+
+if [ $ENABLE_TESTING -eq 1 ]; then
+    echo "Enable testing repository"
+    YUM_ARGS=$YUM_ARGS" --enablerepo=nethserver-testing "
+fi
+
+echo "Initialize system"
+service rsyslog start
+/etc/e-smith/events/actions/initialize-default-databases
+/etc/e-smith/events/actions/init-repo
+
+echo "Install all packages"
+yum --enablerepo=nethserver-dev clean all
+yum --noplugins $YUM_ARGS install nethserver-* -y
+/etc/e-smith/events/actions/initialize-default-databases
+
+
+
+

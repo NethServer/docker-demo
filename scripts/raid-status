@@ -1,0 +1,1 @@
+echo '{"results":[{"failed_devs":"none","level":"1","ok_devs":"2","md":"md1","tot_devs":"2","active_devs":"sdb1,sda1","spare_devs":"none","result":"ok"},{"failed_devs":"none","level":"1","ok_devs":"2","md":"md2","tot_devs":"2","active_devs":"sdb2,sda2","spare_devs":"none","result":"ok"}]}'

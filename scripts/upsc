@@ -1,0 +1,43 @@
+echo 'battery.alarm.threshold: N
+battery.charge: 100.0
+battery.charge.restart: 00
+battery.date: 08/28/06
+battery.packs: 000
+battery.runtime: 1860
+battery.runtime.low: 300
+battery.voltage: 55.08
+battery.voltage.nominal: 048
+device.mfr: APC
+device.model: Smart-UPS 2200
+device.serial: JS0636001865
+device.type: ups
+driver.name: apcsmart
+driver.parameter.pollinterval: 10
+driver.parameter.port: /dev/ttyS0
+driver.version: 2.6.5
+driver.version.internal: 3.04
+input.frequency: 50.00
+input.quality: FF
+input.sensitivity: M
+input.transfer.high: 253
+input.transfer.low: 208
+input.transfer.reason: simulated power failure or UPS test
+input.voltage: 236.1
+input.voltage.maximum: 236.1
+input.voltage.minimum: 234.7
+output.voltage: 236.1
+output.voltage.nominal: 230
+ups.delay.shutdown: 090
+ups.delay.start: 000
+ups.firmware: 654.13.I
+ups.id: UPS_IDEN
+ups.load: 042.2
+ups.mfr: APC
+ups.mfr.date: 08/28/06
+ups.model: Smart-UPS 2200
+ups.serial: JS0636001865
+ups.status: OL
+ups.temperature: 026.5
+ups.test.interval: 1209600
+ups.test.result: NO
+'
