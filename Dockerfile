@@ -54,7 +54,6 @@ ADD scripts/signal-event /sbin/e-smith/signal-event
 ADD scripts/validate /sbin/e-smith/validate
 ADD scripts/pkginfo /sbin/e-smith/pkginfo
 ADD scripts/pkginfo-compsdump.json /var/lib/nethserver/pkginfo-compsdump.json
-ADD scripts/sudo /usr/bin/sudo
 ADD scripts/start.sh /usr/local/bin/start.sh
 RUN chmod 755 /usr/local/bin/start.sh
 
