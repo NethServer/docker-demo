@@ -24,6 +24,7 @@ RUN /sbin/e-smith/signal-event system-init; /sbin/e-smith/expand-template /etc/h
 RUN yum clean all
 RUN yum --noplugins install --enablerepo=updates --exclude=nethserver-devbox nethserver-* -y || exit 0
 RUN /etc/e-smith/events/actions/initialize-default-databases
+RUN /sbin/e-smith/expand-template /etc/sudoers
 
 # Remove unwanted RPMS
 
