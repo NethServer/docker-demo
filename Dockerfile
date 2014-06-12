@@ -51,6 +51,9 @@ ADD scripts/read-service-status /usr/libexec/nethserver/read-service-status
 ADD scripts/upsc /usr/bin/upsc
 ADD scripts/providers-status /usr/bin/providers-status
 ADD scripts/signal-event /sbin/e-smith/signal-event
+ADD scripts/validate /sbin/e-smith/validate
+ADD scripts/pkginfo /sbin/e-smith/pkginfo
+ADD scripts/pkginfo-compsdump.json /var/lib/nethserver/pkginfo-compsdump.json
 ADD scripts/sudo /usr/bin/sudo
 ADD scripts/start.sh /usr/local/bin/start.sh
 RUN chmod 755 /usr/local/bin/start.sh
