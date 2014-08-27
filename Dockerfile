@@ -2,7 +2,7 @@
 #
 # Version 0.1
 
-FROM centos
+FROM centos:centos6
 
 MAINTAINER Giacomo Sanchietti, giacomo@nethesis.it
 
