@@ -1,4 +1,5 @@
 <?php
+
 namespace Nethgui\Utility;
 
 /*
@@ -47,10 +48,13 @@ class PamAuthenticator implements \Nethgui\Log\LogConsumerInterface, \Nethgui\Ut
      * @param \Nethgui\Utility\PhpWrapper $php
      * @param \Nethgui\Log\LogInterface $log
      */
-    public function __construct(\Nethgui\Utility\PhpWrapper $php = NULL, \Nethgui\Log\LogInterface $log = NULL)
+    public function __construct(\Nethgui\Log\LogInterface $log = NULL, \Nethgui\Utility\PhpWrapper $php = NULL)
     {
-        if (is_null($php)) {
-            $php = new \Nethgui\Utility\PhpWrapper(get_class($this));
+        if ($php === NULL) {
+            $php = new \Nethgui\Utility\PhpWrapper(__CLASS__);
+        }
+        if ($log === NULL) {
+            $log = new \Nethgui\Log\Nullog();
         }
         $this->php = $php;
         $this->log = $log;
