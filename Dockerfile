@@ -8,13 +8,10 @@ MAINTAINER Giacomo Sanchietti, giacomo@nethesis.it
 
 EXPOSE 980
 
-RUN yum --disablerepo=* localinstall -y http://pulp.nethserver.org/nethserver/nethserver-release.rpm
+RUN yum --disablerepo=* localinstall -y http://pulp.nethserver.org/nethserver/6.6/base/x86_64/Packages/nethserver-release-6.6-0.1.beta1.ns6.noarch.rpm
 RUN rpm --import /etc/pki/rpm-gpg/*
 
-# Uncomment for local builds
-#RUN sed -i 's/pulp.nethserver.org/birro.nethesis.it:8083/' /etc/yum.repos.d/NethServer.repo
-
-RUN yum --disablerepo=* --enablerepo=nethserver-base,nethserver-updates,centos-base,centos-updates --exclude=kernel* --releasever=6.5 install rsyslog @nethserver-iso -y
+RUN yum --disablerepo=* --enablerepo=nethserver-base,nethserver-updates,centos-base,centos-updates --exclude=kernel* --releasever=6.6 install rsyslog @nethserver-iso -y
 
 #RUN service rsyslog start
 RUN /etc/e-smith/events/actions/initialize-default-databases
