@@ -119,7 +119,7 @@ def main():
         action = sys.argv[1]
         if action == 'grouplist' or action == 'compsdump':
 #           compsdump(yb)
-            print "\n".join(list(open("/var/lib/nethserver/pkginfo-compsdump.json")))
+            print "\n".join(list(open("/var/lib/nethserver/pkginfo-compsdump-%s.json" % os.environ['LANG'][0:5])))
         elif action == 'info':
            pkginfo(yb,sys.argv[2])
 

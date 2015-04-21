@@ -1,0 +1,14 @@
+======================
+NethServer Docker Demo
+======================
+
+This is a demo of NethServer running on a Docker container..  The only
+working part is the web interface. No installed module will work.
+
+Official site: http://www.nethserver.org
+
+.. TIP:: stop all docker instances and restart the demo: ::
+  
+  docker stop $(docker ps -q -a)
+  docker rm $(docker ps -q -a)
+  docker run -d -p 8080:980 gsanchietti/nethserver-demo:latest
