@@ -6,7 +6,7 @@ FROM centos:centos6
 
 MAINTAINER NethServer, http://www.nethserver.org
 
-EXPOSE 980 22
+EXPOSE 980
 
 COPY nethserver-install-demo.sh  /usr/local/bin/
 RUN nethserver-install-demo.sh

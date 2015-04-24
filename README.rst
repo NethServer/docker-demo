@@ -19,6 +19,6 @@ Use ``root`` as user name and the well-known password, ``Nethesis,1234``.
   
 If you like to see what is under the hood, run Bash: ::
 
-  docker run -p 8080:980 -p 2222:22 nethserver/docker-demo /bin/bash
+  docker run -i -t --entrypoint='/bin/bash' nethserver/docker-demo
 
 
