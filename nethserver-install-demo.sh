@@ -62,7 +62,7 @@ echo 'nethserver-lang-*' >> ${packages}
 downloaddir=/tmp/rpms
 mkdir -p ${downloaddir}
 yumdownloader --destdir=${downloaddir} $(sort < ${packages} | uniq)
-rpm -i --nodeps ${downloaddir}/*.rpm
+rpm -i --nodeps --replacepkgs ${downloaddir}/*.rpm
 rm -rf ${downloaddir} ${packages}
 yum --enablerepo=* clean all
 
