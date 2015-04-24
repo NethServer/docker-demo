@@ -15,15 +15,10 @@ To access the web interface (Server Manager) point your browser to: ::
 
   http://localhost:8080
 
-If you like to see what is under the hood, start the container
-WITH_SSH. For instance: ::
-
-  docker run -p 8080:980 -p 2222:22 -e WITH_SSH=1 nethserver/docker-demo
-
-Then open another terminal and connect on port 2222, using the
-well-known password, ``Nethesis,1234``: ::
-
-  ssh -p 2222 localhost
-
+Use ``root`` as user name and the well-known password, ``Nethesis,1234``.
   
+If you like to see what is under the hood, run Bash: ::
+
+  docker run -p 8080:980 -p 2222:22 nethserver/docker-demo /bin/bash
+
 

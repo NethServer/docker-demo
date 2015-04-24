@@ -16,5 +16,5 @@ RUN nethserver-config-demo.sh
 ADD root/ /
 
 # Start web interface
-ENTRYPOINT ["/usr/local/bin/start.sh"]
+ENTRYPOINT ["/usr/sbin/httpd-admin", "-D", "FOREGROUND", "-f", "/etc/httpd/admin-conf/httpd.conf"]
 
