@@ -57,6 +57,8 @@ for group in  nethserver-backup \
    yum groupinfo ${group} |  sed -n '/^   nethserver/ p' >> ${packages}
 done
 
+echo 'nethserver-lang-*' >> ${packages}
+
 downloaddir=/tmp/rpms
 mkdir -p ${downloaddir}
 yumdownloader --destdir=${downloaddir} $(sort < ${packages} | uniq)
