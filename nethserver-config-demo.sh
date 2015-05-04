@@ -25,7 +25,7 @@ set -x
 
 /etc/e-smith/events/actions/initialize-default-databases init || :
 
-for L in en_GB en_US it_IT ru_RU es_ES el_GR; do
+for L in en_GB en_US it_IT ru_RU es_ES el_GR tr_TR; do
     if locale -a | grep -q "^$L"; then
        LANG=$L.utf8 /sbin/e-smith/pkginfo compsdump > /var/lib/nethserver/pkginfo-compsdump-$L.json
     fi
