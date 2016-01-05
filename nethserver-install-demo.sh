@@ -58,6 +58,7 @@ for group in  nethserver-backup \
 done
 
 echo 'nethserver-lang-*' >> ${packages}
+echo 'passwd' >> ${packages}
 
 downloaddir=/tmp/rpms
 mkdir -p ${downloaddir}
