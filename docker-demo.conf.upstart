@@ -1,0 +1,8 @@
+description "NethServer docker demo"
+author "Davide Principi <davide.principi@nethesis.it>"
+respawn
+respawn limit 10 5
+start on started docker
+stop on stopping docker
+
+exec /usr/local/bin/docker-compose -p demo -f /etc/docker-demo.yml up --force-recreate

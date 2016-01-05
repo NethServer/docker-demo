@@ -1,0 +1,5 @@
+docker-demo:
+  image: nethserver/docker-demo
+  hostname: demo.nethserver.org
+  ports:
+    - 8080:980
