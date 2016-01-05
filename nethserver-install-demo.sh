@@ -23,7 +23,7 @@
 set -e
 
 yum -y install yum-utils
-yum -y --disablerepo=* localinstall http://mirror.nethserver.org/nethserver/nethserver-release-6.6.rpm
+yum -y --disablerepo=* localinstall http://mirror.nethserver.org/nethserver/nethserver-release-6.7.rpm
 
 nethserver-install
 
