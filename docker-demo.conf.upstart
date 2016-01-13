@@ -5,4 +5,11 @@ respawn limit 10 5
 start on started docker
 stop on stopping docker
 
-exec /usr/local/bin/docker-compose -p demo -f /etc/docker-demo.yml up --force-recreate
+#
+# To initially create the docker-demo container:
+#
+# docker create -h demo.nethserver.org --name docker-demo \
+#   -p 8080:980 nethserver/docker-demo:latest
+#
+
+exec docker start -a docker-demo
