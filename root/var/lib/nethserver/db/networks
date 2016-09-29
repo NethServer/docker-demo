@@ -1,0 +1,7 @@
+# DO NOT MODIFY THIS FILE.
+# This file is automatically maintained by NethServer
+# configuration software.  Manually editing this file may put your 
+# system in an unknown state.
+#
+# updated: Fri Jul 21 10:00:45 2017
+ppp0=xdsl-disabled|AuthType|auto|FwInBandwidth||FwOutBandwidth||Password||name|PPPoE|provider|xDSL provider|role|red|user|

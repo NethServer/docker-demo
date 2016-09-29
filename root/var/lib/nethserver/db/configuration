@@ -1,0 +1,86 @@
+# DO NOT MODIFY THIS FILE.
+# This file is automatically maintained by NethServer
+# configuration software.  Manually editing this file may put your 
+# system in an unknown state.
+#
+# updated: Fri Jul 21 10:03:38 2017
+DomainName=nethserver.org
+MinUid=5000
+OrganizationContact=configuration|City|Hometown|Company|Example Org|CountryCode||Department|Main|PhoneNumber|575-1685|State||Street|123 Main Street
+SystemName=demo
+TimeZone=UTC
+admins=configuration|group|domain admins|user|admin
+amavisd=service|AdminNotificationStatus|disabled|AvailableDecoders|mail,asc,uue,hqx,ync,F,Z,gz,bz2,lzo,rpm,cpio,tar,deb,zip,7z,rar,arj,arc,zoo,lha,doc,cab,tnef,exe|BlockAttachmentClassList|Exec|BlockAttachmentCustomList|doc,odt|BlockAttachmentCustomStatus|disabled|BlockAttachmentStatus|enabled|EnabledDecoders|mail,asc,uue,hqx,ync,F,Z,gz,bz2,lzo,rpm,cpio,tar,deb,zip,7z,rar,arj,arc,zoo,lha,doc,cab,tnef,exe|MaxProcesses|4|RecipientWhiteList||SenderBlackList||SenderWhiteList||SpamCheckStatus|enabled|SpamDsnLevel|20|SpamKillLevel|15.0|SpamSubjectPrefixStatus|disabled|SpamSubjectPrefixString|***SPAM*** |SpamTag2Level|5.0|SpamTagLevel|2.0|TCPPorts||VirusCheckStatus|enabled|status|enabled
+avahi-daemon=service|UDPPort|5353|access|green|status|enabled
+backup-config=configuration|HistoryLength|3|notify|never|notifyFrom||notifyTo|admin@localhost|status|enabled
+backup-data=configuration|BackupTime|1:00|CleanupOlderThan|never|FullDay|0|LogFile|/var/log/last-backup.log|Mount|/mnt/backup|NFSHost||NFSShare||Program|duplicity|SMBHost||SMBLogin||SMBPassword||SMBShare||Type|incremental|USBLabel||VFSType||VolSize|250|WebDAVLogin||WebDAVPassword||WebDAVUrl||notify|error|notifyFrom||notifyTo|root@localhost|status|disabled
+bandwidthd=service|Subnets|green|alias||status|enabled
+c-icap=service|DebugLevel|0|TemplateDefaultLanguage|en|status|disabled
+cgp=configuration|alias|
+chronyd=service|NTPServer|pool.ntp.org|UDPPort|123|access|green|status|enabled
+collectd=service|PingHosts||status|enabled
+cups=service|TCPPort|631|UDPPort|631|access|green|status|enabled
+dns=configuration|NameServers|8.8.4.4,8.8.8.8
+dnsmasq=service|CacheSize|4000|TCPPort|53|UDPPorts|53,67,69|access|green|dhcp-boot||except-interface|virbr0|status|enabled|tftp-status|enabled
+dovecot=service|AdminIsMaster|disabled|DeletedToTrash|disabled|FtsLuceneStatus|enabled|ImapStatus|enabled|KrbKeytabPath|/var/lib/dovecot/krb5.keytab|KrbPrimaryList|smtp,imap,pop|KrbStatus|enabled|LmtpInetListenerStatus|disabled|LogActions|disabled|MaxProcesses|400|MaxUserConnectionsPerIp|12|PopStatus|enabled|QuotaDefaultSize|20|QuotaStatus|disabled|SharedMailboxesStatus|enabled|SpamFolder|Junk|SpamRetentionTime|15d|TCPPorts|110,143,4190,993,995|TlsSecurity|required|access|green,red|status|enabled
+ejabberd=service|TCPPorts|5222,5223,5280|WebAdmin|disabled|WelcomeSubject||WelcomeText||XMPPAccess|tls|access|green,red|status|enabled
+firewall=configuration|CheckIP|8.8.8.8,208.67.222.222|Docker|disabled|ExternalPing|enabled|HairpinNat|disabled|MACValidation|disabled|MACValidationPolicy|drop|MaxNumberPacketLoss|5|MaxPercentPacketLoss|10|NotifyWan|disabled|NotifyWanFrom|root@localhost|NotifyWanTo|root@localhost|PingInterval|5|Policy|permissive|WanMode|balance|nfqueue|disabled|tc|Simple
+fstab=configuration
+httpd=service|SSLCipherSuite|HIGH:MEDIUM:!aNULL:!MD5:!SEED:!IDEA|TCPPorts|80,443|access|green,red|status|enabled
+httpd-admin=service|ForcedLoginModule||SSL|enabled|TCPPort|980|access|green,red|colors||favicon|favicon.png|headerBackground||logo||menuBackground||status|enabled
+hylafax=configuration|AreaNumber||ClientShowReceived|disabled|CountryCode|39|DateFormat|DMY|Debug|disabled|DispatchFileType|pdf|FaxDevice|ttyS0|FaxName|fax|FaxNumber||InternationalPrefix|00|Lang||LongDistance|0|Mail2Fax|disabled|Mode|both|NotifyFileType|pdf|NotifyMaster|never|PBXPrefix||PaperSize|A4|PrintReceived|disabled|PrinterName| |Resolution|196|RingsBeforeAnswer|1|SambaFax|disabled|SambaFaxName|SambaFax|SendReport|disabled|SendTo||WaitDialTone|enabled|status|enabled
+hylafax-faxq=service|status|enabled
+hylafax-hfaxd=service|TCPPort|4559|access|green|status|enabled
+iaxmodem=service|status|enabled
+ipsec=service|status|enabled
+libvirtd=service|status|enabled
+lightsquid=configuration|BigFileLimit|10|Lang|eng|PerUserTrafficLimit|10|Template|nethesis|alias|
+logrotate=configuration|Compression|disabled|Rotate|weekly|Times|4
+lsm=service|status|disabled
+maxAcctNameLength=31
+maxGroupNameLength=31
+maxIbayNameLength=30
+memcached=service|status|enabled
+mysqld=service|LocalNetworkingOnly|no|MaxAllowedPacket|16M|TCPPort|3306|access||status|enabled
+nextcloud=configuration|TrustedDomains|
+nmb=service|UDPPorts|137,138|access|green|status|enabled
+nsswitch=configuration|aliases|files nisplus|automount|files nisplus|bootparams|nisplus [NOTFOUND=return] files|ethers|files|group|files|hosts|files dns|netgroup|nisplus|netmasks|files|networks|files|passwd|files|protocols|files|publickey|nisplus|rpc|files|services|files|shadow|files
+ntopng=service|Authentication|disabled|Interfaces||TCPPort|3000|access|green|status|disabled
+nut-monitor=service|Master||Notify|disabled|status|disabled
+nut-server=service|Device|auto|Model||Password||TCPPort|3493|Ups|UPS|User|upsmon|access|green|status|disabled
+openvpn@host-to-net=service|AuthMode|password|BridgeEndIP||BridgeName|br0|BridgeStartIP||ClientToClient|disabled|Compression|enabled|Mode|routed|Netmask||Network||PushDns||PushDomain||PushExtraRoutes|enabled|PushNbdd||PushWins||Remote||RouteToVPN|disabled|TapInterface|tap0|UDPPort|1194|access|green,red|status|disabled
+owncloud=configuration|TrustedDomains|
+p3scan=service|SSLScan|disabled|SpamScan|enabled|TCPPort|8110|Template|/etc/p3scan/p3scan-en.mail|VirusScan|enabled|access||status|disabled
+passwordstrength=configuration|MaxPassAge|180|MinPassAge|0|PassExpires|no|PassWarning|7|Users|strong
+phone-home=configuration|status|enabled|uuid|
+php=configuration|DateTimezone|UTC|ExposePhp||MaxExecutionTime||MemoryLimit||PostMaxSize||ShortOpenTag||UploadMaxFilesize|
+pki=configuration|CertificateDuration|3650|ChainFile||CommonName||CountryCode||CrtFile||EmailAddress||KeyFile||LetsEncrypt|disabled|LetsEncryptDomains||LetsEncryptMail||LetsEncryptRenewDays|30|Locality||Organization||OrganizationalUnitName||State||SubjectAltName|
+postfix=service|AccessBypassList||AccessPolicies||AdsGroupsDeliveryType|copy|AdsMapUserPrincipalStatus|enabled|AlwaysBccAddress||AlwaysBccStatus|disabled|ConnectionsLimit|0|ConnectionsLimitPerIp|0|HeloHost||KrbStatus|enabled|MessageQueueLifetime|4|MessageSizeMax|20000000|MessageSizeMin|1048576|MxRecordStatus|enabled|RblServers||RblStatus|disabled|SmartHostName||SmartHostPassword||SmartHostPort|25|SmartHostStatus|disabled|SmartHostTlsStatus|enabled|SmartHostUsername||SpfStatus|disabled|SystemUserRecipientStatus|disabled|TCPPorts|25,465,587|access|green,red|status|enabled
+postgresql=service|TCPPort|5432|access||status|enabled
+proxy=configuration|host||password||port||user|
+pulledpork=configuration|Policy|connectivity
+redis=service|TCPPort|6379|access|green|status|enabled
+redis-ntopng=service|TCPPort|6378|access||status|enabled
+rh-php56-php-fpm=service|TCPPorts|9000|access||status|enabled
+root=configuration|EmailAddress||KeepMessageCopy|yes
+roundcubemail=configuration|PluginsList|managesieve,markasjunk|Server|localhost|access|public
+rsyslog=service|LogAll2VT6|no|status|enabled
+shorewall=service|status|enabled
+smartd=service|status|enabled
+smb=service|DeadTime|10080|Libwbclient|samba|NetbiosAliasList||TCPPorts|139,445|UseClientDriver|yes|UseCups|enabled|WinsServerIP||access|green|status|enabled
+snmpd=service|Community|public|SysContact|Root <root@localhost>|SysLocation|Unknown|UDPPort|161|access|green|status|disabled
+snortd=service|status|disabled
+spamassassin=service|TCPPort|783|access||status|enabled
+squid=service|BlueMode|manual|BypassDomains||DiskCache|disabled|DiskCacheSize|100|GreenMode|manual|KrbPrimaryList|HTTP|KrbStatus|enabled|MaxObjSize|4096|MemCacheSize|256|MinObjSize|0|NoCache||ParentProxy||PortBlock|disabled|SafePorts||TCPPorts|3128,3129,3130|access|green|status|disabled
+squidclamav=configuration|status|disabled
+squidguard=configuration|BlockedFileTypes||CustomListURL||DomainBlacklist||DomainWhitelist||Expressions|disabled|IdleChildren|5|Lists|shalla|MaxChildren|20|RedirectUrl||RedirectUrlHTTPS|blocked.nethserver.org:443|StartupChildren|5|UrlBlacklist||UrlWhitelist|
+sshd=service|LoginGraceTime|2m|MaxAuthTries|6|PasswordAuthentication|yes|PermitRootLogin|yes|Protocol|2|TCPPort|22|UsePAM|yes|access|green,red|status|enabled
+sssd=service|AdDns||LdapURI||Provider|none|Realm||Workgroup||status|disabled
+sysconfig=configuration|Copyright||DefaultLanguage|en_US.utf8|ProductName|NethServer|Release|Final|Version|7.3.1611
+tomcat=service|TCPPorts|8080|access|green|status|enabled
+tomcat@webtop=service|status|enabled
+ufdb=service|status|disabled
+unbound=service|UDPPort|10053|access||status|enabled
+vsftpd=service|TCPPort|21|UserType|virtual|access|green|status|disabled
+webtop=configuration|ActiveSync|enabled|ActiveSyncLog|LOGLEVEL_ERROR|Debug|false|DefaultLocale|en_US|DefaultTimezone|Etc/UTC|MaxMemory|1024|MinMemory|512|PublicUrl|
+xinetd=service|status|enabled

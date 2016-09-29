@@ -1,0 +1,80 @@
+#!/bin/bash
+
+#
+# Copyright (C) 2017 Nethesis S.r.l.
+# http://www.nethesis.it - nethserver@nethesis.it
+#
+# This script is part of NethServer.
+#
+# NethServer is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License,
+# or any later version.
+#
+# NethServer is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with NethServer.  If not, see COPYING.
+#
+
+set -e
+
+downloaddir=/srv/demobuild
+
+yum -y install yum-utils epel-release patch
+yum -y --disablerepo=* localinstall http://mirror.nethserver.org/nethserver/nethserver-release-7.rpm
+rpm --import /etc/pki/rpm-gpg/*
+yum -y install  \
+                sudo rsync python-simplejson \
+                perl perl-Text-Template perl-Sys-Syslog perl-JSON perl-Authen-PAM perl-LDAP perl-Net-DNS \
+                httpd mod_ssl \
+                mod_php php-xml php-soap php-intl
+
+mkdir -p ${downloaddir}
+pushd ${downloaddir}
+yumdownloader --destdir=. -x nethserver-suricata,nethserver-webtop4,nethserver-dc,nethserver-directory,nethserver-ndpi,nethserver-lib nethserver-\* passwd
+curl -O http://packages.nethserver.org/nethserver/6.9/base/x86_64/Packages/nethserver-lib-2.1.5-1.ns6.noarch.rpm
+yum --enablerepo=* clean all
+
+for RPM in *.rpm; do
+    rpm2cpio $RPM | cpio -id
+done
+
+chown -c -R root:root .
+find ${downloaddir} -type d | xargs -- chmod 755
+
+mkdir -p /etc/e-smith/events
+mv ${downloaddir}/etc/e-smith/events/actions  /etc/e-smith/events
+mv ${downloaddir}/usr/libexec/nethserver /usr/libexec
+mv ${downloaddir}/etc/sudoers.d/* /etc/sudoers.d
+mv ${downloaddir}/sbin/e-smith /usr/sbin
+mv ${downloaddir}/usr/share/nethesis /usr/share
+mv ${downloaddir}/usr/share/perl5/vendor_perl/{NethServer,esmith} /usr/share/perl5/vendor_perl
+mv ${downloaddir}/var/lib/nethserver /var/lib
+mv ${downloaddir}/var/cache/duc /var/cache
+mv ${downloaddir}/etc/httpd/admin-conf.d /etc/httpd
+
+popd
+
+rm -rf ${downloaddir}
+
+# Set default root password
+PASSWORD="Nethesis,1234"
+echo -e "$PASSWORD\n$PASSWORD" | /usr/bin/passwd --stdin root
+
+# Disable error reporting:
+sed -i "/^ini_set('error_reporting'/ c \
+ini_set('error_reporting', 0); \
+" /usr/share/nethesis/nethserver-manager/index.php
+
+mkdir -p /etc/httpd/admin-conf{,.d}
+mkdir -p /var/cache/nethserver-httpd-admin
+mkdir -p /var/log/httpd-admin
+
+chown -c root:root /etc/sudoers.d/*
+chmod -c 0440 /etc/sudoers.d/*
+
+sync

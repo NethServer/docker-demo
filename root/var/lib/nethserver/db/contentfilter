@@ -1,0 +1,8 @@
+# DO NOT MODIFY THIS FILE.
+# This file is automatically maintained by NethServer
+# configuration software.  Manually editing this file may put your 
+# system in an unknown state.
+#
+# updated: Fri Jul 21 09:55:02 2017
+default=filter|BlackList|enabled|BlockAll|disabled|BlockBuiltinRules|disabled|BlockIpAccess|enabled|Description|Default filter|Removable|no|WhiteList|enabled
+default_profile=profile|Description|Default profile|Filter|filter;default|Removable|no

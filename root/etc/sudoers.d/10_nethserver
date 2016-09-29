@@ -1,0 +1,6 @@
+Cmnd_Alias NETHSERVER_ADM = /usr/libexec/nethserver/shorewall-check, /usr/libexec/nethserver/providers-status
+
+%adm ALL=NOPASSWD: NETHSERVER_ADM
+
+# server-manager does not require a tty
+Defaults:srvmgr !requiretty

@@ -1,0 +1,50 @@
+# DO NOT MODIFY THIS FILE.
+# This file is automatically maintained by NethServer
+# configuration software.  Manually editing this file may put your 
+# system in an unknown state.
+#
+# updated: Fri Jul 21 09:55:05 2017
+dhcp=fwservice|Description||Ports|67,68|Protocol|tcpudp
+dhcpv6=fwservice|Description||Ports|546,547|Protocol|tcpudp
+dns=fwservice|Description||Ports|53|Protocol|tcpudp
+email-grp=fwservice|Description||Ports|25,110,143,465,587,993,995|Protocol|tcp
+ftp=fwservice|Description||Ports|21,20|Protocol|tcpudp
+gopher=fwservice|Description||Ports|70|Protocol|tcpudp
+http=fwservice|Description||Ports|80|Protocol|tcp
+http-alt=fwservice|Description||Ports|8080,81,82|Protocol|tcp
+https=fwservice|Description||Ports|443|Protocol|tcp
+hylafax=fwservice|Description||Ports|4559|Protocol|tcp
+iax=fwservice|Description||Ports|4569|Protocol|udp
+imap=fwservice|Description||Ports|143|Protocol|tcp
+imaps=fwservice|Description||Ports|993|Protocol|tcp
+isakmp=fwservice|Description||Ports|500|Protocol|tcpudp
+kerberos-grp=fwservice|Description||Ports|88,749,750,751|Protocol|tcpudp
+l2tp=fwservice|Description||Ports|1701|Protocol|tcpudp
+ldap=fwservice|Description||Ports|389|Protocol|tcpudp
+ldaps=fwservice|Description||Ports|636|Protocol|tcpudp
+ms-sql=fwservice|Description||Ports|1434,1433|Protocol|tcpudp
+mysql=fwservice|Description||Ports|3306|Protocol|tcpudp
+netbios-grp=fwservice|Description||Ports|138,137,139|Protocol|tcpudp
+nfs=fwservice|Description||Ports|2049|Protocol|tcpudp
+ntp=fwservice|Description||Ports|123|Protocol|tcpudp
+openvpn=fwservice|Description||Ports|1194|Protocol|udp
+pop3=fwservice|Description||Ports|110|Protocol|tcp
+pop3s=fwservice|Description||Ports|995|Protocol|tcp
+postgres=fwservice|Description||Ports|5432|Protocol|tcpudp
+pptp=fwservice|Description||Ports|1723|Protocol|tcp
+printer=fwservice|Description||Ports|515|Protocol|tcpudp
+radius-grp=fwservice|Description||Ports|1812,1813|Protocol|tcpudp
+rdp=fwservice|Description||Ports|3389|Protocol|tcp
+server-manager=fwservice|Description||Ports|980|Protocol|tcp
+smtp=fwservice|Description||Ports|25|Protocol|tcp
+smtps=fwservice|Description||Ports|465|Protocol|tcp
+snmp-grp=fwservice|Description||Ports|161,162|Protocol|tcpudp
+squid=fwservice|Description||Ports|3128|Protocol|tcp
+ssh=fwservice|Description||Ports|22|Protocol|tcpudp
+submission=fwservice|Description||Ports|587|Protocol|tcpudp
+telnet=fwservice|Description||Ports|23|Protocol|tcpudp
+telnets=fwservice|Description||Ports|992|Protocol|tcpudp
+web-grp=fwservice|Description||Ports|80,443,980|Protocol|tcp
+who=fwservice|Description||Ports|513|Protocol|udp
+wins=fwservice|Description||Ports|1512|Protocol|tcpudp
+wnn6-ds=fwservice|Description||Ports|26208|Protocol|tcpudp

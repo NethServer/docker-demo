@@ -2,19 +2,15 @@
 # NethServer Docker demo
 #
 
-FROM centos:centos6
-
-MAINTAINER NethServer, http://www.nethserver.org
+FROM centos:latest
 
 EXPOSE 980
 
-COPY nethserver-install-demo.sh  /usr/local/bin/
-RUN nethserver-install-demo.sh
+ADD root/ /srv/root
+RUN useradd -G adm -r srvmgr && \
+    chown -c -R root:root /srv/root && \
+    /srv/root/build-docker-demo && \
+    rsync -aiI /srv/root/ /
 
-COPY nethserver-config-demo.sh /usr/local/bin/
-RUN nethserver-config-demo.sh
-ADD root/ /
-
-# Start web interface
-ENTRYPOINT ["/usr/sbin/httpd-admin", "-D", "FOREGROUND", "-f", "/etc/httpd/admin-conf/httpd.conf"]
+ENTRYPOINT ["/run.sh"]
 

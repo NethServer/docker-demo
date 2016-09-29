@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<duc root="/" size_apparent="140741181982038" size_actual="3717693440" count="103901">
+ <ent type="dir" name="usr" size_apparent="1097588447" size_actual="1206763520" count="56461">
+  <ent type="dir" name="lib" size_apparent="409868248" size_actual="432644096" count="11212">
+   <ent type="dir" name="modules" size_apparent="129987903" size_actual="135000064" count="2901">
+    <ent type="dir" name="3.10.0-514.21.1.el7.x86_64" size_apparent="129983807" size_actual="134995968" count="2900">
+     <ent type="dir" name="kernel" size_apparent="126979087" size_actual="131944448" count="2874">
+      <ent type="dir" name="drivers" size_apparent="90228354" size_actual="93638656" count="1982">
+       <ent type="dir" name="net" size_apparent="21702232" size_actual="22122496" count="332">
+        <ent type="dir" name="ethernet" size_apparent="10393985" size_actual="10518528" count="114">
+        </ent>
+       </ent>
+       <ent type="dir" name="media" size_apparent="13539033" size_actual="14557184" count="494">
+       </ent>
+       <ent type="dir" name="gpu" size_apparent="11235367" size_actual="11280384" count="38">
+        <ent type="dir" name="drm" size_apparent="11231271" size_actual="11276288" count="37">
+        </ent>
+       </ent>
+      </ent>
+      <ent type="dir" name="net" size_apparent="12225936" size_actual="13053952" count="444">
+      </ent>
+      <ent type="dir" name="fs" size_apparent="10898556" size_actual="11075584" count="113">
+      </ent>
+     </ent>
+    </ent>
+   </ent>
+   <ent type="dir" name="locale" size_apparent="106075056" size_actual="106049536" count="3">
+   </ent>
+   <ent type="dir" name="firmware" size_apparent="100870397" size_actual="103227392" count="1140">
+    <ent type="dir" name="brcm" size_apparent="12759058" size_actual="12816384" count="29">
+    </ent>
+   </ent>
+   <ent type="dir" name="python2.7" size_apparent="44576503" size_actual="54538240" count="4478">
+    <ent type="dir" name="site-packages" size_apparent="44572407" size_actual="54534144" count="4477">
+     <ent type="dir" name="boto" size_apparent="10978601" size_actual="13041664" count="1009">
+     </ent>
+    </ent>
+   </ent>
+   <ent type="dir" name="udev" size_apparent="11461448" size_actual="11677696" count="83">
+    <ent type="dir" name="hwdb.d" size_apparent="11129458" size_actual="11190272" count="28">
+    </ent>
+   </ent>
+  </ent>
+  <ent type="dir" name="share" size_apparent="281530342" size_actual="331890688" count="22222">
+   <ent type="dir" name="locale" size_apparent="100001124" size_actual="105373696" count="3575">
+   </ent>
+   <ent type="dir" name="doc" size_apparent="48716903" size_actual="56647680" count="3807">
+   </ent>
+   <ent type="dir" name="man" size_apparent="17029376" size_actual="34852864" count="6592">
+   </ent>
+   <ent type="dir" name="perl5" size_apparent="23030383" size_actual="28323840" count="2168">
+   </ent>
+   <ent type="dir" name="backgrounds" size_apparent="20226052" size_actual="20246528" count="9">
+   </ent>
+  </ent>
+  <ent type="dir" name="lib64" size_apparent="218183382" size_actual="229335040" count="5923">
+   <ent type="dir" name="python2.7" size_apparent="44424371" size_actual="51814400" count="3485">
+    <ent type="dir" name="site-packages" size_apparent="16596936" size_actual="19587072" count="1384">
+    </ent>
+   </ent>
+   <ent type="dir" name="perl5" size_apparent="20562073" size_actual="21921792" count="745">
+    <ent type="dir" name="vendor_perl" size_apparent="14266914" size_actual="15224832" count="487">
+     <ent type="dir" name="auto" size_apparent="11717413" size_actual="12230656" count="231">
+     </ent>
+    </ent>
+   </ent>
+   <ent type="dir" name="samba" size_apparent="12675355" size_actual="12812288" count="95">
+   </ent>
+  </ent>
+  <ent type="dir" name="bin" size_apparent="74548575" size_actual="76038144" count="857">
+  </ent>
+  <ent type="dir" name="src" size_apparent="51307100" size_actual="71741440" count="14812">
+   <ent type="dir" name="kernels" size_apparent="51298908" size_actual="71733248" count="14810">
+    <ent type="dir" name="3.10.0-514.21.1.el7.x86_64" size_apparent="51294812" size_actual="71729152" count="14809">
+     <ent type="dir" name="include" size_apparent="29422480" size_actual="38723584" count="9377">
+      <ent type="dir" name="linux" size_apparent="11378919" size_actual="16162816" count="1969">
+      </ent>
+     </ent>
+    </ent>
+   </ent>
+  </ent>
+  <ent type="dir" name="sbin" size_apparent="43181771" size_actual="43835392" count="424">
+  </ent>
+  <ent type="dir" name="libexec" size_apparent="15113669" size_actual="15486976" count="202">
+  </ent>
+ </ent>
+ <ent type="dir" name="var" size_apparent="190045094" size_actual="213909504" count="6805">
+  <ent type="dir" name="cache" size_apparent="126739612" size_actual="126918656" count="76">
+   <ent type="dir" name="yum" size_apparent="126403465" size_actual="126570496" count="61">
+    <ent type="dir" name="x86_64" size_apparent="126399369" size_actual="126566400" count="60">
+     <ent type="dir" name="7" size_apparent="126395273" size_actual="126562304" count="59">
+      <ent type="dir" name="updates" size_apparent="51151859" size_actual="51175424" count="8">
+       <ent type="dir" name="gen" size_apparent="43009024" size_actual="43016192" count="2">
+       </ent>
+      </ent>
+      <ent type="dir" name="base" size_apparent="35425991" size_actual="35454976" count="10">
+       <ent type="dir" name="gen" size_apparent="29425806" size_actual="29433856" count="3">
+       </ent>
+      </ent>
+      <ent type="dir" name="epel" size_apparent="34359505" size_actual="34398208" count="11">
+       <ent type="dir" name="gen" size_apparent="28325913" size_actual="28332032" count="3">
+       </ent>
+      </ent>
+     </ent>
+    </ent>
+   </ent>
+  </ent>
+  <ent type="dir" name="lib" size_apparent="62085396" size_actual="85995520" count="6623">
+   <ent type="dir" name="rpm" size_apparent="58052608" size_actual="57942016" count="19">
+   </ent>
+  </ent>
+ </ent>
+ <ent type="dir" name="boot" size_apparent="98415892" size_actual="99065856" count="328">
+ </ent>
+ <ent type="dir" name="etc" size_apparent="30462592" size_actual="37548032" count="3754">
+  <ent type="dir" name="selinux" size_apparent="17065092" size_actual="20660224" count="1673">
+   <ent type="dir" name="targeted" size_apparent="17049938" size_actual="20639744" count="1668">
+    <ent type="dir" name="active" size_apparent="11439680" size_actual="14905344" count="1620">
+    </ent>
+   </ent>
+  </ent>
+ </ent>
+ <ent type="dir" name="run" size_apparent="12604123" size_actual="12824576" count="320">
+  <ent type="dir" name="log" size_apparent="12583192" size_actual="12582912" count="7">
+   <ent type="dir" name="journal" size_apparent="12583132" size_actual="12582912" count="6">
+   </ent>
+  </ent>
+ </ent>
+ <ent type="dir" name="proc" size_apparent="140737486472723" size_actual="0" count="18507">
+ </ent>
+ <ent type="dir" name="sys" size_apparent="118822215" size_actual="0" count="17382">
+  <ent type="dir" name="devices" size_apparent="97196965" size_actual="0" count="4224">
+   <ent type="dir" name="pci0000:00" size_apparent="88054579" size_actual="0" count="1190">
+    <ent type="dir" name="0000:00:02.0" size_apparent="84373792" size_actual="0" count="146">
+    </ent>
+   </ent>
+  </ent>
+  <ent type="dir" name="kernel" size_apparent="12505468" size_actual="0" count="9131">
+   <ent type="dir" name="slab" size_apparent="12316672" size_actual="0" count="3250">
+   </ent>
+  </ent>
+ </ent>
+</duc>

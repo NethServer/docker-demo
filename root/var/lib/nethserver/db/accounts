@@ -1,0 +1,7 @@
+# DO NOT MODIFY THIS FILE.
+# This file is automatically maintained by NethServer
+# configuration software.  Manually editing this file may put your 
+# system in an unknown state.
+#
+# updated: Fri Jul 21 10:00:45 2017
+postmaster@=pseudonym|Access|public|Account|root|Description|RFC-mandatory postmaster alias
