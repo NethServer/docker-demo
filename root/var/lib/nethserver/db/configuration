@@ -76,7 +76,7 @@ squidclamav=configuration|status|disabled
 squidguard=configuration|BlockedFileTypes||CustomListURL||DomainBlacklist||DomainWhitelist||Expressions|disabled|IdleChildren|5|Lists|shalla|MaxChildren|20|RedirectUrl||RedirectUrlHTTPS|blocked.nethserver.org:443|StartupChildren|5|UrlBlacklist||UrlWhitelist|
 sshd=service|LoginGraceTime|2m|MaxAuthTries|6|PasswordAuthentication|yes|PermitRootLogin|yes|Protocol|2|TCPPort|22|UsePAM|yes|access|green,red|status|enabled
 sssd=service|AdDns||LdapURI||Provider|none|Realm||Workgroup||status|disabled
-sysconfig=configuration|Copyright||DefaultLanguage|en_US.utf8|ProductName|NethServer|Release|Final|Version|7.3.1611
+sysconfig=configuration|NsReleaseLock|disabled|ProductName|NethServer|Release|final|Version|7.5.1804
 tomcat=service|TCPPorts|8080|access|green|status|enabled
 tomcat@webtop=service|status|enabled
 ufdb=service|status|disabled
@@ -84,3 +84,4 @@ unbound=service|UDPPort|10053|access||status|enabled
 vsftpd=service|TCPPort|21|UserType|virtual|access|green|status|disabled
 webtop=configuration|ActiveSync|enabled|ActiveSyncLog|LOGLEVEL_ERROR|Debug|false|DefaultLocale|en_US|DefaultTimezone|Etc/UTC|MaxMemory|1024|MinMemory|512|PublicUrl|
 xinetd=service|status|enabled
+subscription=configuration|AlertsAutoUpdates|enabled|AlertsUrl|https://my.nethserver.com/api/machine/|ApiUrl|https://my.nethserver.com/api/|InventoryUrl|https://my.nethserver.com/api/machine/inventories/store/|NsRelease|7.5.1804|PricingUrl|https://my.nethserver.com/?action=newServer|Secret||SystemId|

@@ -24,42 +24,43 @@ set -e
 
 downloaddir=/srv/demobuild
 
-yum -y install yum-utils epel-release patch
-yum -y --disablerepo=* localinstall http://mirror.nethserver.org/nethserver/nethserver-release-7.rpm
-rpm --import /etc/pki/rpm-gpg/*
-yum -y install  \
-                sudo rsync python-simplejson \
-                perl perl-Text-Template perl-Sys-Syslog perl-JSON perl-Authen-PAM perl-LDAP perl-Net-DNS \
-                httpd mod_ssl \
-                mod_php php-xml php-soap php-intl
-
 mkdir -p ${downloaddir}
 pushd ${downloaddir}
-yumdownloader --destdir=. -x nethserver-suricata,nethserver-webtop4,nethserver-dc,nethserver-directory,nethserver-ndpi,nethserver-lib nethserver-\* passwd
+
+yum_excludes=''
+for xpackage in nethserver-mail-server nethserver-mail-filter nethserver-mail-common nethserver-getmail nethserver-spamd nethserver-p3scan \
+                nethserver-don nethserver-owncloud nethserver-suricata nethserver-webtop4 \
+                nethserver-dc nethserver-directory \
+                nethserver-ndpi nethserver-lib; do
+    yum_excludes="${yum_excludes}-x ${xpackage} "
+done
+yumdownloader --destdir=. ${yum_excludes} nethserver-\* passwd
 curl -O http://packages.nethserver.org/nethserver/6.9/base/x86_64/Packages/nethserver-lib-2.1.5-1.ns6.noarch.rpm
-yum --enablerepo=* clean all
 
 for RPM in *.rpm; do
+    echo "[INFO] unpacking ${RPM}"
     rpm2cpio $RPM | cpio -id
 done
 
 chown -c -R root:root .
-find ${downloaddir} -type d | xargs -- chmod 755
+find ${downloaddir} -type d | xargs -- chmod -c 755
 
-mkdir -p /etc/e-smith/events
-mv ${downloaddir}/etc/e-smith/events/actions  /etc/e-smith/events
-mv ${downloaddir}/usr/libexec/nethserver /usr/libexec
-mv ${downloaddir}/etc/sudoers.d/* /etc/sudoers.d
-mv ${downloaddir}/sbin/e-smith /usr/sbin
-mv ${downloaddir}/usr/share/nethesis /usr/share
-mv ${downloaddir}/usr/share/perl5/vendor_perl/{NethServer,esmith} /usr/share/perl5/vendor_perl
-mv ${downloaddir}/var/lib/nethserver /var/lib
-mv ${downloaddir}/var/cache/duc /var/cache
-mv ${downloaddir}/etc/httpd/admin-conf.d /etc/httpd
+mkdir -vp /etc/e-smith/events
+mv -v ${downloaddir}/etc/e-smith/events/actions  /etc/e-smith/events
+mv -v ${downloaddir}/usr/libexec/nethserver /usr/libexec
+mv -v ${downloaddir}/etc/sudoers.d/* /etc/sudoers.d
+mv -v ${downloaddir}/sbin/e-smith /usr/sbin
+mv -v ${downloaddir}/usr/share/nethesis /usr/share
+mv -v ${downloaddir}/usr/share/perl5/vendor_perl/{NethServer,esmith} /usr/share/perl5/vendor_perl
+mv -v ${downloaddir}/var/lib/nethserver /var/lib
+mv -v ${downloaddir}/var/cache/duc /var/cache
+rm -vf ${downloaddir}/etc/httpd/admin-conf.d/rspamd.conf
+mv -v ${downloaddir}/etc/httpd/admin-conf.d /etc/httpd
 
 popd
 
 rm -rf ${downloaddir}
+rm -rf /var/cache/yum
 
 # Set default root password
 PASSWORD="Nethesis,1234"
