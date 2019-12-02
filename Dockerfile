@@ -2,7 +2,7 @@
 # NethServer Docker demo
 #
 
-FROM centos:latest
+FROM centos:7
 
 EXPOSE 980
 
